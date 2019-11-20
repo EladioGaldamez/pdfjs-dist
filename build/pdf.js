@@ -20042,7 +20042,7 @@ function (_WidgetAnnotationElem) {
           element.setAttribute('value', this.data.fieldValue);
         }
 
-        element.name = this.data.fieldName.replace(/[^a-zA-Z0-9]/g,'_');
+        element.name = this.data.fieldName.replace(/[^a-zA-Z0-9]/g,'_').replace(/[\_]{2}/g, '_');
         element.id = 'field-' + this.data.id;
         element.disabled = this.data.readOnly;
 
@@ -20117,7 +20117,7 @@ function (_WidgetAnnotationElem2) {
       var element = document.createElement('input');
       element.disabled = this.data.readOnly;
       element.type = 'checkbox';
-      element.name = this.data.fieldName.replace(/[^a-zA-Z0-9]/g,'_');
+      element.name = this.data.fieldName.replace(/[^a-zA-Z0-9]/g,'_').replace(/[\_]{2}/g, '_');
       element.id = 'field-' + this.data.id;
 
       if (this.data.fieldValue && this.data.fieldValue !== 'Off') {
@@ -20150,7 +20150,7 @@ function (_WidgetAnnotationElem3) {
       var element = document.createElement('input');
       element.disabled = this.data.readOnly;
       element.type = 'radio';
-      element.name = this.data.fieldName.replace(/[^a-zA-Z0-9]/g,'_');
+      element.name = this.data.fieldName.replace(/[^a-zA-Z0-9]/g,'_').replace(/[\_]{2}/g, '_');
       element.id = 'field-' + this.data.id;
 
       if (this.data.fieldValue === this.data.buttonValue) {
@@ -20206,7 +20206,7 @@ function (_WidgetAnnotationElem4) {
       this.container.className = 'choiceWidgetAnnotation';
       var selectElement = document.createElement('select');
       selectElement.disabled = this.data.readOnly;
-      selectElement.name = this.data.fieldName.replace(/[^a-zA-Z0-9]/g,'_');
+      selectElement.name = this.data.fieldName.replace(/[^a-zA-Z0-9]/g,'_').replace(/[\_]{2}/g, '_');
       selectElement.id = 'field-' + this.data.id;
 
       if (!this.data.combo) {

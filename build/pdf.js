@@ -20042,6 +20042,8 @@ function (_WidgetAnnotationElem) {
           element.setAttribute('value', this.data.fieldValue);
         }
 
+        element.name = this.data.fieldName.replace(/[^a-zA-Z0-9]/g,'_');
+        element.id = 'field-' + this.data.id;
         element.disabled = this.data.readOnly;
 
         if (this.data.maxLen !== null) {
@@ -20115,6 +20117,8 @@ function (_WidgetAnnotationElem2) {
       var element = document.createElement('input');
       element.disabled = this.data.readOnly;
       element.type = 'checkbox';
+      element.name = this.data.fieldName.replace(/[^a-zA-Z0-9]/g,'_');
+      element.id = 'field-' + this.data.id;
 
       if (this.data.fieldValue && this.data.fieldValue !== 'Off') {
         element.setAttribute('checked', true);
@@ -20146,7 +20150,8 @@ function (_WidgetAnnotationElem3) {
       var element = document.createElement('input');
       element.disabled = this.data.readOnly;
       element.type = 'radio';
-      element.name = this.data.fieldName;
+      element.name = this.data.fieldName.replace(/[^a-zA-Z0-9]/g,'_');
+      element.id = 'field-' + this.data.id;
 
       if (this.data.fieldValue === this.data.buttonValue) {
         element.setAttribute('checked', true);
@@ -20201,6 +20206,8 @@ function (_WidgetAnnotationElem4) {
       this.container.className = 'choiceWidgetAnnotation';
       var selectElement = document.createElement('select');
       selectElement.disabled = this.data.readOnly;
+      selectElement.name = this.data.fieldName.replace(/[^a-zA-Z0-9]/g,'_');
+      selectElement.id = 'field-' + this.data.id;
 
       if (!this.data.combo) {
         selectElement.size = this.data.options.length;
